@@ -19,4 +19,45 @@ básico de HTML, CSS e JavaScript.
 4. Comece a usar: O cronômetro será exibido em seu navegador, pronto para uso. Use os botôes "Iniciar", "Pausar", "Continuar" e "Resetar" para controlar o cronômetro conforme necessário.
 # uso
 
-1. Inclua os Arquivos Necessários: Certifique-se de incluir os seguintes arquivos em seu projeto:  
+1. Inclua os Arquivos Necessários: Certifique-se de incluir os seguintes arquivos em seu projeto:
+
+<link rel="stylesheet" href="./style.css">
+<script src="./script.js"></script>
+
+2. Crie um elemento HTML: Adicione um elemento HTML em seu código onde você deseja exibir o cronômetro:
+
+<div id="cronometro"></div>
+
+3. Inclua os Seletores HTML: Certifique-se de ter os seletores corretos para os elementos HTML onde você deseja exibir o cronômetro. No exemplo fornecido, os seletores são definidos da seguinte forma:
+
+const contentMinutes = document.querySelector('.minutes');
+const contentSeconds = document.querySelector('.seconds')
+const contentMilliseconds = document.querySelector('.milliseconds')
+
+4. Defina os Botões e Variáveis Necessários: No exemplo, há botões para iniciar, pausar, continuar e resetar o cronômetro, bem como variáveis para rastrear o estado do cronômetro:
+
+const btnStart = document.querySelector('.btnstart');
+const btnPause = document.querySelector('.btnpause');
+const btnResume = document.querySelector('.btnresume');
+const btnReset = document.querySelector('.btnreset');
+
+let interval;
+let minutes = 0;
+let seconds = 0;
+let milliseconds = 0;
+let isPaused = false;
+
+5. Adicione Event Listeners aos Botões: Os eventos de clique são adicionados aos botões para controlar o cronômetro:
+
+btnStart.addEventListener('click', startInterval);
+btnPause.addEventListener('click', pauseInterval);
+btnResume.addEventListener('click', resumeInterval);
+btnReset.addEventListener('click', resetInterval);
+
+6. Personalize o Estilo e Layout: A personalização do estilo e do layout do cronômetro pode ser feita por meio do arquivo style.css. Certifique-se de ajustar o estilo de acordo com o design do seu projeto.
+
+7. Interaja com o Cronômetro: Agora, você pode interagir com o cronômetro utilizando os seguintes botões:
+- Iniciar: Inicia o cronômetro.
+- Pausar: Pausa o cronômetro.
+- Continuar: Continua o cronômetro após a pausa.
+- Resetar: Zera o cronômetro.
